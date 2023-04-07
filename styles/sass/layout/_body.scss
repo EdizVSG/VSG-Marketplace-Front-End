@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+small {
+    color: $border-gray;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+.closeModal {
+    cursor: pointer;
+    position: absolute;
+    left: 94%;
+    top: 2%;
+    background: none;
+}
+
+button,
+a {
+    pointer-events: auto;
+}
+
+a {
+    color: $general-white;
+    text-decoration: none;
+}
+
+svg {
+    pointer-events: none;
+}
+
+body {
+    height: 100vh;
+    background-color: $body-background;
+    font-family: 'Roboto';
+
+    #root {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #root {
+        @include flex-align(column, center);
+        height: 93%;
+
+        aside {
+            display: none;
+        }
+    }
+}

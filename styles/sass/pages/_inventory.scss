@@ -1,0 +1,285 @@
+#inventoryMain {
+    flex-direction: column;
+
+    #searchSpace {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+
+        #input {
+            @include flex-align(row, flex-end);
+            width: 20%;
+            border-bottom: 1px solid #000;
+
+            input {
+                outline: none;
+                padding-bottom: 2px;
+            }
+
+            svg {
+                padding-bottom: 6px;
+                margin-right: 12px;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            margin-left: 20px;
+            width: 120px;
+            height: 36px;
+            color: $general-white;
+            background: $add-button;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+
+            svg {
+                margin-right: 6px;
+            }
+        }
+    }
+
+    #tableBorder {
+        border: 1px solid $border-gray;
+        border-radius: 4px;
+        margin-top: 40px;
+        height: calc(100% - 100px);
+        overflow-x: auto;
+
+        table {
+            position: relative;
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            text-align: left;
+
+            tr th {
+                padding: 22px;
+                border-bottom: 1px solid $border-gray;
+                padding-left: 20px;
+            }
+
+            tr td {
+                padding: 16px;
+                border-bottom: 1px solid $border-gray;
+                padding-left: 20px;
+            }
+
+            th,
+            td {
+                padding-left: 20px;
+
+                a {
+                    margin: 8px;
+                }
+            }
+
+            .editDelete {
+                position: relative;
+                width: 60px;
+
+                .edit {
+                    position: relative;
+                    cursor: pointer;
+                }
+
+                .delete {
+                    position: relative;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .removeContainer {
+        @include pop-up(150%, -295%);
+    }
+
+    .removeContainer::before {
+        @include triangle(70%);
+    }
+}
+
+#addItemOverlay,
+#addItemOverlay2 {
+    @include overlay;
+
+    .modalContent {
+        @include modal(700px, 600px);
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        overflow-x: auto;
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-top: 8%;
+
+            .leftModal {
+                @include flex-align(column, flex-start);
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                width: 40%;
+                margin-left: 8%;
+
+                h2 {
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 29px;
+                    margin-bottom: 40px;
+                }
+
+                input,
+                textarea,
+                select {
+                    resize: none;
+                    font-family: "Inter";
+                    border-bottom: 1px solid $underline-gray;
+                    outline: none;
+                    margin-bottom: 30px;
+                    height: 30px;
+                    width: 240px;
+                }
+
+                input::placeholder,
+                textarea::placeholder,
+                select::placeholder {
+                    color: $underline-gray;
+                }
+
+                textarea {
+                    height: 90px;
+                }
+            }
+
+            .rightModal {
+                @include flex-align(column, center);
+                width: 50%;
+                justify-content: center;
+                margin-top: 14%;
+
+                img {
+                    max-width: 260px;
+                    max-height: 150px;
+                }
+
+                .uploadDelete {
+                    @include flex-align(column, center);
+                    justify-content: space-evenly;
+                }
+
+                .uploadImg {
+                    @include button($upload-image);
+                }
+
+                .deleteImg {
+                    @include button($main-color);
+                }
+
+                .inputImage {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    button[type="submit"] {
+        cursor: pointer;
+        margin-top: 8%;
+        align-self: center;
+        width: 150px;
+        height: 36px;
+        background: $add-button;
+        color: $general-white;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #inventoryMain {
+        height: 100%;
+        width: 86%;
+        padding: 0px 4px;
+
+        #searchSpace {
+            @include flex-align(row, flex-end);
+            justify-content: space-between;
+            margin: 20px 10px;
+
+            #input {
+                width: 46%;
+
+                input {
+                    width: 50%;
+                }
+            }
+        }
+
+        #tableBorder {
+            margin-top: 20px;
+            margin: 20px 10px;
+        }
+
+        .removeContainer {
+            @include pop-up(150%, -398%);
+        }
+
+        .removeContainer::before {
+            @include triangle(90%);
+        }
+    }
+
+    #addItemOverlay,
+    #addItemOverlay2 {
+
+        .modalContent {
+            @include modal(96%, 92%);
+
+            .closeModal {
+                left: 90%;
+            }
+
+            .row {
+                margin-top: 16px;
+                @include flex-align(column, center);
+
+                .leftModal,
+                .rightModal {
+                    margin: 0px;
+                    padding: 0px 16px;
+                    width: 90%;
+
+                    h2 {
+                        margin: 0px;
+                    }
+
+                    input,
+                    select {
+                        padding: 8px 0px;
+                        margin-bottom: 14px;
+                        width: 96%;
+                    }
+
+                    textarea {
+                        width: 96%;
+                    }
+
+                    img {
+                        margin-top: 16px;
+                    }
+
+                    .uploadDelete {
+                        flex-direction: row;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
