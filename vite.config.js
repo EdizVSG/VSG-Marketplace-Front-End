@@ -1,16 +1,14 @@
-import { liveReload } from 'vite-plugin-live-reload';
-import { defineConfig } from 'vite';
+import { liveReload } from "vite-plugin-live-reload";
+import { defineConfig } from "vite";
 
 const config = defineConfig({
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + "/dist",
   },
   build: {
-    emptyOutDir: true
+    emptyOutDir: true,
   },
-  plugins: [
-    liveReload(),
-  ],
+  plugins: [liveReload()],
 });
 
 export default config;

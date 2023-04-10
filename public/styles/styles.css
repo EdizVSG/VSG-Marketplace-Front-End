@@ -219,6 +219,7 @@ aside nav ul #logout {
   background: url("/images/home/landing-background.png") center fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 0;
 }
 #landingMain #loginButton {
   display: flex;
@@ -230,7 +231,6 @@ aside nav ul #logout {
   font-size: 2rem;
   width: 175px;
   height: 62px;
-  border-radius: 4px;
   margin-top: 120px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
@@ -910,7 +910,7 @@ aside nav ul #logout {
   font-weight: 400;
   font-size: 14px;
   padding: 6px 20px;
-  height: 40px;
+  min-height: 40px;
 }
 #pendingOrdersMain .pendingOrders .firstThree,
 #myOrdersMain .pendingOrders .firstThree {
@@ -1028,8 +1028,7 @@ aside nav ul #logout {
     align-items: center;
     align-self: center;
     width: 76%;
-    min-height: 200px;
-    height: 28%;
+    min-height: 215px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     padding: 0px 10px;
   }
