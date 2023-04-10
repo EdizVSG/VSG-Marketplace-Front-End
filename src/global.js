@@ -28,8 +28,8 @@ export function headerUpdate(path) {
 
     if (path === '/') {
         document.querySelector('#root').style.height = '100vh';
-    } else { 
-        document.querySelector('#root').style.height = 'calc(100vh - 60px)'; 
+    } else {
+        document.querySelector('#root').style.height = 'calc(100vh - 60px)';
     }
 }
 
