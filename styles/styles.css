@@ -866,6 +866,7 @@ aside nav ul #logout {
     background: #FFF;
     border-radius: 20px;
     position: relative;
+    flex-wrap: nowrap;
   }
   #addItemOverlay .modalContent .closeModal,
   #addItemOverlay2 .modalContent .closeModal {
