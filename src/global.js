@@ -25,6 +25,12 @@ export function headerUpdate(path) {
         const pageTitle = path.replace(path[0], path[0].toUpperCase());
         titleElement.textContent = pageTitle;
     }
+
+    if (path === '/') {
+        document.querySelector('#root').style.height = '100vh';
+    } else { 
+        document.querySelector('#root').style.height = 'calc(100vh - 60px)'; 
+    }
 }
 
 export function addButtons() {

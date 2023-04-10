@@ -105,7 +105,6 @@
 
     .modalContent {
         @include modal(700px, 600px);
-        flex-wrap: nowrap;
         overflow-y: auto;
         overflow-x: auto;
 
@@ -138,8 +137,8 @@
                     font-family: "Inter";
                     border-bottom: 1px solid $underline-gray;
                     outline: none;
-                    margin-bottom: 30px;
-                    height: 30px;
+                    margin-bottom: 4px;
+                    height: 20px;
                     width: 240px;
                 }
 
@@ -190,7 +189,7 @@
         margin-top: 8%;
         align-self: center;
         width: 150px;
-        height: 36px;
+        min-height: 36px;
         background: $add-button;
         color: $general-white;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
@@ -237,7 +236,6 @@
 
         .modalContent {
             @include modal(96%, 92%);
-            flex-wrap: nowrap;
 
             .closeModal {
                 left: 90%;
@@ -259,17 +257,13 @@
 
                     input,
                     select {
+                        height:45px;
                         padding: 8px 0px;
-                        margin-bottom: 14px;
                         width: 96%;
                     }
 
                     textarea {
                         width: 96%;
-                    }
-
-                    img {
-                        margin-top: 16px;
                     }
 
                     .uploadDelete {

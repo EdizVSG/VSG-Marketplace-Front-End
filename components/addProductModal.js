@@ -28,7 +28,7 @@ export const addProduct = () => {
             <input type="number" name="qty" required placeholder="Qty *">
         </div>
         <div class="rightModal">
-            <img class="currentImg" src="images/inventory/no-image-placeholder.png">
+            <img class="currentImg" src="public/images/inventory/no-image-placeholder.png">
             <input class="inputImage" accept="image/*" name="image" type="file">
             <div class="uploadDelete">
                 <button class="uploadImg">Upload</button>

@@ -84,7 +84,7 @@ export const imageHandler = () => {
     document.querySelectorAll(".deleteImg").forEach((b) =>
         b.addEventListener("click", (e) => {
             e.preventDefault();
-            document.querySelector(".currentImg").src = "images/inventory/no-image-placeholder.png";
+            document.querySelector(".currentImg").src = "public/images/inventory/no-image-placeholder.png";
             document.querySelector(".inputImage").value = "";
         })
     );
