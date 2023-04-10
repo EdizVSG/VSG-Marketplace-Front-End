@@ -1,0 +1,1216 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+small {
+  color: #b3b3b3;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  pointer-events: none;
+}
+
+.closeModal {
+  cursor: pointer;
+  position: absolute;
+  left: 94%;
+  top: 2%;
+  background: none;
+}
+
+button,
+a {
+  pointer-events: auto;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+svg {
+  pointer-events: none;
+}
+
+body {
+  height: 100vh;
+  background-color: #F0F2F3;
+  font-family: "Roboto";
+}
+body #root {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 93%;
+  }
+  #root aside {
+    display: none;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  font-family: "Montserrat";
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 16px;
+  height: 54px;
+}
+header #logo {
+  width: 30px;
+  height: 30px;
+  padding-right: 70px;
+}
+header #pageTitle {
+  font-size: 30px;
+}
+header .profileGreet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .profileGreet span {
+  font-weight: 700;
+  margin-right: 10px;
+}
+header .profileGreet img {
+  width: 30px;
+  height: 30px;
+}
+header #closeMenu,
+header #hamburger {
+  color: #ED1C25;
+  display: none;
+  align-self: center;
+}
+@media screen and (max-width: 768px) {
+  header #logo {
+    padding-right: 0px;
+  }
+  header .profileGreet {
+    display: none;
+  }
+}
+
+aside,
+main {
+  height: calc(100vh - 160px);
+  background-color: #FFF;
+  border-radius: 20px;
+  margin: 30px 20px;
+  overflow-y: auto;
+}
+
+main {
+  padding: 20px 26px;
+  width: 100%;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px 8px;
+  justify-content: space-evenly;
+  width: 30%;
+  max-width: 320px;
+  min-width: 160px;
+  flex-wrap: nowrap;
+}
+aside .profileGreet2 {
+  display: none;
+  margin: 0px 14px;
+  margin-top: 20px;
+}
+aside .profileGreet2 span {
+  margin-left: 10px;
+}
+aside nav {
+  height: inherit;
+  width: 100%;
+}
+aside nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  height: 94%;
+  margin-top: 7%;
+}
+aside nav ul li {
+  width: 100%;
+}
+aside nav ul .navButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 6px 14px;
+  font-weight: 400;
+  background: #FFF;
+  color: #000;
+  height: 46px;
+  width: 90%;
+  border-radius: 10px;
+}
+aside nav ul .navButton:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+aside nav ul .navButton:active {
+  cursor: pointer;
+  color: #FFF;
+  background: #ED1C25;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+aside nav ul .navButton:active .icon > path {
+  fill: #FFF;
+}
+aside nav ul .icon {
+  margin: 0px 14px;
+}
+aside nav ul .active {
+  cursor: pointer;
+  color: #FFF;
+  background: #ED1C25;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  fill: #FFF;
+}
+aside nav ul #logout {
+  margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    width: 100%;
+    height: 100%;
+    margin: 16px 0px;
+    padding: 0px 20px;
+  }
+  aside .profileGreet2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  aside nav ul {
+    margin-top: 20px;
+  }
+}
+#landingMain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  background: url("../images/home/landing-background.png") center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#landingMain #loginButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #ED1C25;
+  border-color: #ED1C25;
+  font-size: 2rem;
+  width: 175px;
+  height: 62px;
+  border-radius: 4px;
+  margin-top: 120px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+#landingMain #loginButton:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #marketplaceLogo {
+    width: 80%;
+  }
+}
+#marketplaceMain {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-evenly;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  flex-wrap: wrap;
+  margin: 20px 10px;
+  width: 280px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.product .productButton {
+  cursor: pointer;
+  align-self: center;
+}
+.product img {
+  max-height: 150px;
+}
+.product .productContent {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+}
+.product .productContent .price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.product .productContent .price span {
+  line-height: 22px;
+  font-weight: 600;
+}
+.product .productContent .price small {
+  font-size: 12px;
+}
+.product .productContent form {
+  display: flex;
+  position: relative;
+}
+.product .productContent form .quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.product .productContent form .quantity span {
+  font-size: 10px;
+  color: #b3b3b3;
+}
+.product .productContent form .quantity select {
+  cursor: pointer;
+  border-bottom: 1px solid #000;
+}
+.product .productContent form .buyButton {
+  cursor: pointer;
+  background: none;
+  width: 31px;
+  height: 31px;
+  margin-left: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  #marketplaceMain {
+    width: 80%;
+    margin: 16px 0px;
+  }
+  #marketplaceMain .buyContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    color: #000;
+    flex-wrap: nowrap;
+    width: 280px;
+    height: 80px;
+    top: 140%;
+    left: -330%;
+    padding: 14px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    z-index: 99;
+  }
+  #marketplaceMain .buyContainer::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 84%;
+    border-style: solid;
+    border-width: 0 7px 10px 7px;
+    border-color: transparent transparent #FFF transparent;
+  }
+}
+.buyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  color: #000;
+  flex-wrap: nowrap;
+  width: 280px;
+  height: 80px;
+  top: 140%;
+  left: -160%;
+  padding: 14px;
+  background-color: #FFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  z-index: 99;
+}
+
+.buyContainer::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 48%;
+  border-style: solid;
+  border-width: 0 7px 10px 7px;
+  border-color: transparent transparent #FFF transparent;
+}
+
+.buttons {
+  display: flex;
+  align-self: flex-end;
+  margin: 16px 0px;
+  justify-content: center;
+}
+.buttons button {
+  cursor: pointer;
+  height: 22px;
+  width: 56px;
+  margin: 0px 6px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border: 1px solid #ED1C25;
+}
+.buttons .no,
+.buttons .yes:active {
+  background-color: #FFF;
+  color: #ED1C25;
+}
+.buttons .yes,
+.buttons .no:active {
+  background-color: #ED1C25;
+  color: #FFF;
+}
+
+#overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5019607843);
+}
+#overlay img {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+#overlay #modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  flex-wrap: wrap;
+  height: 620px;
+  width: 600px;
+  background: #FFF;
+  border-radius: 20px;
+  position: relative;
+  background-image: url("/images/marketplace/ellipse.png");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+#overlay #modalContent .closeModal {
+  background: none;
+}
+#overlay #modalContent #modalImage {
+  align-self: center;
+}
+#overlay #modalContent #modalImage img {
+  max-height: 320px;
+}
+#overlay #modalContent #modalFrameOne {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  flex-wrap: wrap;
+  margin: 20px;
+  overflow-y: auto;
+}
+#overlay #modalContent #modalFrameOne #modalFrameTwo {
+  display: flex;
+  justify-content: space-between;
+}
+#overlay #modalContent #modalFrameOne #modalFrameTwo #productName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 390px;
+}
+#overlay #modalContent #modalFrameOne #modalFrameTwo #priceAndQty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+#overlay #modalContent #modalFrameOne #modalFrameTwo b {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+}
+#overlay #modalContent #modalFrameOne #modalFrameTwo small {
+  padding: 4px 0px;
+}
+#overlay #modalContent p {
+  margin-top: 10px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+@media screen and (max-width: 768px) {
+  #overlay #modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    flex-wrap: wrap;
+    height: 90%;
+    width: 92%;
+    background: #FFF;
+    border-radius: 20px;
+    position: relative;
+  }
+  #overlay #modalContent .closeModal {
+    top: 1%;
+    left: 92%;
+  }
+  #overlay #modalContent #modalFrameOne #modalFrameTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  #overlay #modalContent #modalFrameOne #modalFrameTwo #productName {
+    width: 100%;
+  }
+  #overlay #modalContent #modalFrameOne #modalFrameTwo #priceAndQty {
+    margin: 10px 0px;
+  }
+  #overlay #modalContent #modalFrameOne #modalFrameTwo b {
+    width: 305px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+  }
+  #overlay #modalContent #modalFrameOne #modalFrameTwo small {
+    padding: 0px;
+    align-self: flex-start;
+  }
+  #overlay #modalContent #modalFrameOne p {
+    text-overflow: ellipsis;
+  }
+}
+
+#inventoryMain {
+  flex-direction: column;
+}
+#inventoryMain #searchSpace {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+#inventoryMain #searchSpace #input {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 20%;
+  border-bottom: 1px solid #000;
+}
+#inventoryMain #searchSpace #input input {
+  outline: none;
+  padding-bottom: 2px;
+}
+#inventoryMain #searchSpace #input svg {
+  padding-bottom: 6px;
+  margin-right: 12px;
+}
+#inventoryMain #searchSpace button {
+  cursor: pointer;
+  margin-left: 20px;
+  width: 120px;
+  height: 36px;
+  color: #FFF;
+  background: #2e7d32;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+#inventoryMain #searchSpace button svg {
+  margin-right: 6px;
+}
+#inventoryMain #tableBorder {
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  margin-top: 40px;
+  height: calc(100% - 100px);
+  overflow-x: auto;
+}
+#inventoryMain #tableBorder table {
+  position: relative;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: left;
+}
+#inventoryMain #tableBorder table tr th {
+  padding: 22px;
+  border-bottom: 1px solid #b3b3b3;
+  padding-left: 20px;
+}
+#inventoryMain #tableBorder table tr td {
+  padding: 16px;
+  border-bottom: 1px solid #b3b3b3;
+  padding-left: 20px;
+}
+#inventoryMain #tableBorder table th,
+#inventoryMain #tableBorder table td {
+  padding-left: 20px;
+}
+#inventoryMain #tableBorder table th a,
+#inventoryMain #tableBorder table td a {
+  margin: 8px;
+}
+#inventoryMain #tableBorder table .editDelete {
+  position: relative;
+  width: 60px;
+}
+#inventoryMain #tableBorder table .editDelete .edit {
+  position: relative;
+  cursor: pointer;
+}
+#inventoryMain #tableBorder table .editDelete .delete {
+  position: relative;
+  cursor: pointer;
+}
+#inventoryMain .removeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  color: #000;
+  flex-wrap: nowrap;
+  width: 280px;
+  height: 80px;
+  top: 150%;
+  left: -295%;
+  padding: 14px;
+  background-color: #FFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  z-index: 99;
+}
+#inventoryMain .removeContainer::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 70%;
+  border-style: solid;
+  border-width: 0 7px 10px 7px;
+  border-color: transparent transparent #FFF transparent;
+}
+
+#addItemOverlay,
+#addItemOverlay2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5019607843);
+}
+#addItemOverlay .modalContent,
+#addItemOverlay2 .modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  flex-wrap: wrap;
+  height: 700px;
+  width: 600px;
+  background: #FFF;
+  border-radius: 20px;
+  position: relative;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+#addItemOverlay .modalContent .row,
+#addItemOverlay2 .modalContent .row {
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}
+#addItemOverlay .modalContent .row .leftModal,
+#addItemOverlay2 .modalContent .row .leftModal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  width: 40%;
+  margin-left: 8%;
+}
+#addItemOverlay .modalContent .row .leftModal h2,
+#addItemOverlay2 .modalContent .row .leftModal h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 40px;
+}
+#addItemOverlay .modalContent .row .leftModal input,
+#addItemOverlay .modalContent .row .leftModal textarea,
+#addItemOverlay .modalContent .row .leftModal select,
+#addItemOverlay2 .modalContent .row .leftModal input,
+#addItemOverlay2 .modalContent .row .leftModal textarea,
+#addItemOverlay2 .modalContent .row .leftModal select {
+  resize: none;
+  font-family: "Inter";
+  border-bottom: 1px solid #9a9a9a;
+  outline: none;
+  margin-bottom: 30px;
+  height: 30px;
+  width: 240px;
+}
+#addItemOverlay .modalContent .row .leftModal input::-moz-placeholder, #addItemOverlay .modalContent .row .leftModal textarea::-moz-placeholder, #addItemOverlay .modalContent .row .leftModal select::-moz-placeholder, #addItemOverlay2 .modalContent .row .leftModal input::-moz-placeholder, #addItemOverlay2 .modalContent .row .leftModal textarea::-moz-placeholder, #addItemOverlay2 .modalContent .row .leftModal select::-moz-placeholder {
+  color: #9a9a9a;
+}
+#addItemOverlay .modalContent .row .leftModal input::placeholder,
+#addItemOverlay .modalContent .row .leftModal textarea::placeholder,
+#addItemOverlay .modalContent .row .leftModal select::placeholder,
+#addItemOverlay2 .modalContent .row .leftModal input::placeholder,
+#addItemOverlay2 .modalContent .row .leftModal textarea::placeholder,
+#addItemOverlay2 .modalContent .row .leftModal select::placeholder {
+  color: #9a9a9a;
+}
+#addItemOverlay .modalContent .row .leftModal textarea,
+#addItemOverlay2 .modalContent .row .leftModal textarea {
+  height: 90px;
+}
+#addItemOverlay .modalContent .row .rightModal,
+#addItemOverlay2 .modalContent .row .rightModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: center;
+  margin-top: 14%;
+}
+#addItemOverlay .modalContent .row .rightModal img,
+#addItemOverlay2 .modalContent .row .rightModal img {
+  max-width: 260px;
+  max-height: 150px;
+}
+#addItemOverlay .modalContent .row .rightModal .uploadDelete,
+#addItemOverlay2 .modalContent .row .rightModal .uploadDelete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#addItemOverlay .modalContent .row .rightModal .uploadImg,
+#addItemOverlay2 .modalContent .row .rightModal .uploadImg {
+  cursor: pointer;
+  margin-top: 20px;
+  color: #FFF;
+  width: 120px;
+  height: 40px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  background: #ed6c02;
+}
+#addItemOverlay .modalContent .row .rightModal .deleteImg,
+#addItemOverlay2 .modalContent .row .rightModal .deleteImg {
+  cursor: pointer;
+  margin-top: 20px;
+  color: #FFF;
+  width: 120px;
+  height: 40px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  background: #ED1C25;
+}
+#addItemOverlay .modalContent .row .rightModal .inputImage,
+#addItemOverlay2 .modalContent .row .rightModal .inputImage {
+  display: none;
+}
+#addItemOverlay button[type=submit],
+#addItemOverlay2 button[type=submit] {
+  cursor: pointer;
+  margin-top: 8%;
+  align-self: center;
+  width: 150px;
+  height: 36px;
+  background: #2e7d32;
+  color: #FFF;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  #inventoryMain {
+    height: 100%;
+    width: 86%;
+    padding: 0px 4px;
+  }
+  #inventoryMain #searchSpace {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 10px;
+  }
+  #inventoryMain #searchSpace #input {
+    width: 46%;
+  }
+  #inventoryMain #searchSpace #input input {
+    width: 50%;
+  }
+  #inventoryMain #tableBorder {
+    margin-top: 20px;
+    margin: 20px 10px;
+  }
+  #inventoryMain .removeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    color: #000;
+    flex-wrap: nowrap;
+    width: 280px;
+    height: 80px;
+    top: 150%;
+    left: -398%;
+    padding: 14px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    z-index: 99;
+  }
+  #inventoryMain .removeContainer::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 90%;
+    border-style: solid;
+    border-width: 0 7px 10px 7px;
+    border-color: transparent transparent #FFF transparent;
+  }
+  #addItemOverlay .modalContent,
+  #addItemOverlay2 .modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    flex-wrap: wrap;
+    height: 96%;
+    width: 92%;
+    background: #FFF;
+    border-radius: 20px;
+    position: relative;
+    flex-wrap: nowrap;
+  }
+  #addItemOverlay .modalContent .closeModal,
+  #addItemOverlay2 .modalContent .closeModal {
+    left: 90%;
+  }
+  #addItemOverlay .modalContent .row,
+  #addItemOverlay2 .modalContent .row {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #addItemOverlay .modalContent .row .leftModal,
+  #addItemOverlay .modalContent .row .rightModal,
+  #addItemOverlay2 .modalContent .row .leftModal,
+  #addItemOverlay2 .modalContent .row .rightModal {
+    margin: 0px;
+    padding: 0px 16px;
+    width: 90%;
+  }
+  #addItemOverlay .modalContent .row .leftModal h2,
+  #addItemOverlay .modalContent .row .rightModal h2,
+  #addItemOverlay2 .modalContent .row .leftModal h2,
+  #addItemOverlay2 .modalContent .row .rightModal h2 {
+    margin: 0px;
+  }
+  #addItemOverlay .modalContent .row .leftModal input,
+  #addItemOverlay .modalContent .row .leftModal select,
+  #addItemOverlay .modalContent .row .rightModal input,
+  #addItemOverlay .modalContent .row .rightModal select,
+  #addItemOverlay2 .modalContent .row .leftModal input,
+  #addItemOverlay2 .modalContent .row .leftModal select,
+  #addItemOverlay2 .modalContent .row .rightModal input,
+  #addItemOverlay2 .modalContent .row .rightModal select {
+    padding: 8px 0px;
+    margin-bottom: 14px;
+    width: 96%;
+  }
+  #addItemOverlay .modalContent .row .leftModal textarea,
+  #addItemOverlay .modalContent .row .rightModal textarea,
+  #addItemOverlay2 .modalContent .row .leftModal textarea,
+  #addItemOverlay2 .modalContent .row .rightModal textarea {
+    width: 96%;
+  }
+  #addItemOverlay .modalContent .row .leftModal img,
+  #addItemOverlay .modalContent .row .rightModal img,
+  #addItemOverlay2 .modalContent .row .leftModal img,
+  #addItemOverlay2 .modalContent .row .rightModal img {
+    margin-top: 16px;
+  }
+  #addItemOverlay .modalContent .row .leftModal .uploadDelete,
+  #addItemOverlay .modalContent .row .rightModal .uploadDelete,
+  #addItemOverlay2 .modalContent .row .leftModal .uploadDelete,
+  #addItemOverlay2 .modalContent .row .rightModal .uploadDelete {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+#pendingOrdersMain,
+#myOrdersMain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+}
+#pendingOrdersMain #headingSection,
+#pendingOrdersMain .pendingOrders,
+#myOrdersMain #headingSection,
+#myOrdersMain .pendingOrders {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 97%;
+  margin-top: 20px;
+  background: #dadcdd;
+  border-radius: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 20px 20px;
+}
+#pendingOrdersMain .pendingOrders,
+#myOrdersMain .pendingOrders {
+  position: relative;
+  border: 1px solid #dadcdd;
+  background-color: #FFF;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 6px 20px;
+  height: 40px;
+}
+#pendingOrdersMain .pendingOrders .firstThree,
+#myOrdersMain .pendingOrders .firstThree {
+  display: flex;
+  width: 45%;
+}
+#pendingOrdersMain .pendingOrders .firstThree span,
+#myOrdersMain .pendingOrders .firstThree span {
+  width: 33%;
+}
+#pendingOrdersMain .pendingOrders .firstTwo,
+#myOrdersMain .pendingOrders .firstTwo {
+  display: flex;
+  width: 30%;
+}
+#pendingOrdersMain .pendingOrders .firstTwo span,
+#myOrdersMain .pendingOrders .firstTwo span {
+  width: 50%;
+}
+#pendingOrdersMain .pendingOrders .orderStatus,
+#myOrdersMain .pendingOrders .orderStatus {
+  display: flex;
+  position: relative;
+}
+#pendingOrdersMain .pendingOrders .orderStatus .cancelOrder,
+#myOrdersMain .pendingOrders .orderStatus .cancelOrder {
+  cursor: pointer;
+  margin-left: 26px;
+}
+#pendingOrdersMain .pendingOrders .cancelOrderContainer,
+#myOrdersMain .pendingOrders .cancelOrderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  color: #000;
+  flex-wrap: nowrap;
+  width: 280px;
+  height: 80px;
+  top: 140%;
+  left: -210%;
+  padding: 14px;
+  background-color: #FFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  z-index: 99;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+#pendingOrdersMain .pendingOrders .cancelOrderContainer::before,
+#myOrdersMain .pendingOrders .cancelOrderContainer::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 85%;
+  border-style: solid;
+  border-width: 0 7px 10px 7px;
+  border-color: transparent transparent #FFF transparent;
+}
+#pendingOrdersMain .codeColumn,
+#myOrdersMain .codeColumn {
+  width: 15%;
+}
+#pendingOrdersMain .qtyColumn,
+#myOrdersMain .qtyColumn {
+  width: 15%;
+}
+#pendingOrdersMain .priceColumn,
+#myOrdersMain .priceColumn {
+  width: 15%;
+}
+#pendingOrdersMain .orderedByColumn,
+#pendingOrdersMain .nameColumn,
+#myOrdersMain .orderedByColumn,
+#myOrdersMain .nameColumn {
+  width: 25%;
+}
+#pendingOrdersMain .orderDateColumn,
+#myOrdersMain .orderDateColumn {
+  width: 20%;
+}
+#pendingOrdersMain .actionColumn,
+#myOrdersMain .actionColumn {
+  align-self: flex-end;
+}
+#pendingOrdersMain .completeButton,
+#myOrdersMain .completeButton {
+  cursor: pointer;
+  margin-top: 20px;
+  color: #FFF;
+  width: 120px;
+  height: 40px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  background: #ED1C25;
+  font-style: normal;
+  font-size: 16px;
+  margin-top: 0px;
+  width: 90px;
+}
+
+@media screen and (max-width: 768px) {
+  #pendingOrdersMain,
+  #myOrdersMain {
+    flex-wrap: nowrap;
+    margin: 16px;
+    padding: 0px;
+    width: 92%;
+    height: 100%;
+  }
+  #pendingOrdersMain #headingSection,
+  #myOrdersMain #headingSection {
+    display: none;
+  }
+  #pendingOrdersMain .pendingOrders,
+  #myOrdersMain .pendingOrders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 76%;
+    min-height: 200px;
+    height: 28%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    padding: 0px 10px;
+  }
+  #pendingOrdersMain .pendingOrders .cancelOrderContainer,
+  #myOrdersMain .pendingOrders .cancelOrderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    color: #000;
+    flex-wrap: nowrap;
+    width: 280px;
+    height: 80px;
+    top: 120%;
+    left: -6%;
+    padding: 14px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    z-index: 99;
+  }
+  #pendingOrdersMain .pendingOrders .cancelOrderContainer::before,
+  #myOrdersMain .pendingOrders .cancelOrderContainer::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 90%;
+    border-style: solid;
+    border-width: 0 7px 10px 7px;
+    border-color: transparent transparent #FFF transparent;
+  }
+  #pendingOrdersMain .pendingOrders span,
+  #myOrdersMain .pendingOrders span {
+    width: 100%;
+    padding: 10px 0px;
+  }
+  #pendingOrdersMain .pendingOrders .firstThree,
+  #pendingOrdersMain .pendingOrders .firstTwo,
+  #pendingOrdersMain .pendingOrders .orderedByColumn,
+  #pendingOrdersMain .pendingOrders .orderDateColumn,
+  #pendingOrdersMain .pendingOrders .nameColumn,
+  #myOrdersMain .pendingOrders .firstThree,
+  #myOrdersMain .pendingOrders .firstTwo,
+  #myOrdersMain .pendingOrders .orderedByColumn,
+  #myOrdersMain .pendingOrders .orderDateColumn,
+  #myOrdersMain .pendingOrders .nameColumn {
+    width: 100%;
+    border-bottom: 1px solid #b3b3b3;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  #pendingOrdersMain .pendingOrders .orderStatus,
+  #myOrdersMain .pendingOrders .orderStatus {
+    align-self: flex-start;
+    margin: 0;
+    width: 100%;
+    padding-top: 24px;
+  }
+  #pendingOrdersMain .pendingOrders .orderStatus span,
+  #myOrdersMain .pendingOrders .orderStatus span {
+    padding: 0;
+  }
+  #pendingOrdersMain .pendingOrders .nameColumn::before,
+  #pendingOrdersMain .pendingOrders .codeColumn::before,
+  #pendingOrdersMain .pendingOrders .qtyColumn::before,
+  #pendingOrdersMain .pendingOrders .priceColumn::before,
+  #pendingOrdersMain .pendingOrders .orderedByColumn::before,
+  #pendingOrdersMain .pendingOrders .orderDateColumn::before,
+  #pendingOrdersMain .pendingOrders .orderStatus > span::before,
+  #myOrdersMain .pendingOrders .nameColumn::before,
+  #myOrdersMain .pendingOrders .codeColumn::before,
+  #myOrdersMain .pendingOrders .qtyColumn::before,
+  #myOrdersMain .pendingOrders .priceColumn::before,
+  #myOrdersMain .pendingOrders .orderedByColumn::before,
+  #myOrdersMain .pendingOrders .orderDateColumn::before,
+  #myOrdersMain .pendingOrders .orderStatus > span::before {
+    font-weight: 700;
+  }
+  #pendingOrdersMain .pendingOrders .codeColumn::before,
+  #pendingOrdersMain .pendingOrders .qtyColumn::before,
+  #pendingOrdersMain .pendingOrders .priceColumn::before,
+  #myOrdersMain .pendingOrders .codeColumn::before,
+  #myOrdersMain .pendingOrders .qtyColumn::before,
+  #myOrdersMain .pendingOrders .priceColumn::before {
+    display: block;
+  }
+  #pendingOrdersMain .pendingOrders .nameColumn::before,
+  #myOrdersMain .pendingOrders .nameColumn::before {
+    content: "Name:   ";
+  }
+  #pendingOrdersMain .pendingOrders .codeColumn::before,
+  #myOrdersMain .pendingOrders .codeColumn::before {
+    content: "Code   ";
+  }
+  #pendingOrdersMain .pendingOrders .qtyColumn::before,
+  #myOrdersMain .pendingOrders .qtyColumn::before {
+    content: "Qty   ";
+  }
+  #pendingOrdersMain .pendingOrders .priceColumn::before,
+  #myOrdersMain .pendingOrders .priceColumn::before {
+    content: "Price   ";
+  }
+  #pendingOrdersMain .pendingOrders .orderedByColumn::before,
+  #myOrdersMain .pendingOrders .orderedByColumn::before {
+    content: "Ordered by:   ";
+  }
+  #pendingOrdersMain .pendingOrders .orderDateColumn::before,
+  #myOrdersMain .pendingOrders .orderDateColumn::before {
+    content: "Order date:   ";
+  }
+  #pendingOrdersMain .pendingOrders .orderStatus span::before,
+  #myOrdersMain .pendingOrders .orderStatus span::before {
+    content: "Status:   ";
+  }
+  #pendingOrdersMain .pendingOrders .completeButton,
+  #myOrdersMain .pendingOrders .completeButton {
+    margin-top: 16px;
+    align-self: center;
+  }
+}/*# sourceMappingURL=styles.css.map */
