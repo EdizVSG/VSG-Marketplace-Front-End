@@ -203,9 +203,6 @@
 
 @media screen and (max-width: 768px) {
     #inventoryMain {
-        height: 100%;
-        width: 86%;
-        padding: 0px 4px;
 
         #searchSpace {
             @include flex-align(row, flex-end);

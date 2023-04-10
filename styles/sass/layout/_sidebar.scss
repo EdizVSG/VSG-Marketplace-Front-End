@@ -5,6 +5,7 @@ main {
     border-radius: 20px;
     margin: 30px 20px;
     overflow-y: auto;
+    flex-wrap: nowrap;
 }
 
 main {
@@ -16,10 +17,8 @@ aside {
     @include flex-align(column, flex-start);
     padding: 20px 8px;
     justify-content: space-evenly;
-    width: 30%;
-    max-width: 320px;
+    width: 24%;
     min-width: 160px;
-    flex-wrap: nowrap;
 
     .profileGreet2 {
         display: none;

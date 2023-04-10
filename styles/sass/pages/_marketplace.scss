@@ -69,8 +69,6 @@
 
 @media screen and (max-width: 768px) {
     #marketplaceMain {
-        width: 80%;
-        margin: 16px 0px;
 
         .buyContainer {
             @include pop-up(140%, -330%);
