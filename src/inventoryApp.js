@@ -7,7 +7,7 @@ import { createRow } from "../components/createRow.js";
 export const inventoryApp = async () => {
     const products = await loadProducts();
     products.forEach((p) => {
-        createRow(p.id, p.title, p.image, p.category, p.price);
+        createRow(p.id, p.title, p.category);
     });
 
     const div = document.createElement("div");

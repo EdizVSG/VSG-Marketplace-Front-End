@@ -4,6 +4,8 @@
     align-items: $align;
 }
 
+//Pop up window with yes and no
+
 @mixin pop-up($top, $left) {
     @include flex-align(column, center);
     position: absolute;
@@ -19,6 +21,8 @@
     z-index: 99;
 }
 
+//Triangle on top of pop up window
+
 @mixin triangle($left) {
     content: '';
     position: absolute;
@@ -28,6 +32,8 @@
     border-width: 0 7px 10px 7px;
     border-color: transparent transparent $general-white transparent;
 }
+
+//Background for the modals
 
 @mixin overlay {
     @include flex-align(column, center);
@@ -42,14 +48,18 @@
 
 }
 
+//Modals styling
+
 @mixin modal($height, $width) {
     @include flex-align(column, space-between);
     height: $height;
     width: $width;
-    background: $general-white;
+    background-color: $general-white;
     border-radius: 20px;
     position: relative;
 }
+
+//General button styling
 
 @mixin button($backgroundColor) {
     cursor: pointer;

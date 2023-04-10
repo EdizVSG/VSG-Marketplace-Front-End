@@ -26,10 +26,10 @@ export function headerUpdate(path) {
         titleElement.textContent = pageTitle;
     }
 
-    if (path === '/') {
-        document.querySelector('#root').style.height = '100vh';
+    if (path === "/") {
+        document.querySelector("#root").style.height = "100vh";
     } else {
-        document.querySelector('#root').style.height = 'calc(100vh - 60px)';
+        document.querySelector("#root").style.height = "calc(100vh - 60px)";
     }
 }
 
@@ -50,7 +50,6 @@ export function closeModalHandler() {
 
 function closing(e) {
     e?.preventDefault();
-    console.log(e.target.parentElement);
     e.target.parentElement.remove();
 
     let overlay = document.querySelector("#overlay");
@@ -77,19 +76,3 @@ export function closeContainerHandler(container) {
         }
     }
 }
-
-//export function closeModalHandler2(modal) {
-// modal.querySelector('div').style.pointerEvents = 'none';
-// setTimeout(() => {
-//     document.addEventListener("click", closeModalClick)
-// }, "100");
-
-// function closeModalClick(e) {
-//     const isClickInsideModal = modal === e.target;
-//     if (!isClickInsideModal) {
-//         modal.remove();
-//         closing();
-//         document.removeEventListener("click", closeModalClick);
-//     }
-// };
-//}

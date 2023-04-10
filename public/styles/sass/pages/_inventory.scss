@@ -1,5 +1,9 @@
+//Inventory page
+
 #inventoryMain {
     flex-direction: column;
+
+    //Search
 
     #searchSpace {
         display: flex;
@@ -37,6 +41,8 @@
             }
         }
     }
+
+    //Table
 
     #tableBorder {
         border: 1px solid $border-gray;
@@ -98,6 +104,8 @@
         @include triangle(70%);
     }
 }
+
+//Modals for adding and editing items
 
 #addItemOverlay,
 #addItemOverlay2 {

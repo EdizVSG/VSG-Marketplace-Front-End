@@ -1,3 +1,4 @@
+import { liveReload } from 'vite-plugin-live-reload';
 import { defineConfig } from 'vite';
 
 const config = defineConfig({
@@ -6,7 +7,10 @@ const config = defineConfig({
   },
   build: {
     emptyOutDir: true
-  }
+  },
+  plugins: [
+    liveReload(),
+  ],
 });
 
 export default config;

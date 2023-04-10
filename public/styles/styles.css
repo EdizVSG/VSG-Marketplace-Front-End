@@ -249,6 +249,32 @@ aside nav ul #logout {
     width: 80%;
   }
 }
+.buttons {
+  display: flex;
+  align-self: flex-end;
+  margin: 16px 0px;
+  justify-content: center;
+}
+.buttons button {
+  cursor: pointer;
+  height: 22px;
+  width: 56px;
+  margin: 0px 6px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border: 1px solid #ED1C25;
+}
+.buttons .no,
+.buttons .yes:active {
+  background-color: #FFF;
+  color: #ED1C25;
+}
+.buttons .yes,
+.buttons .no:active {
+  background-color: #ED1C25;
+  color: #FFF;
+}
+
 #marketplaceMain {
   display: flex;
   flex-direction: row;
@@ -257,8 +283,7 @@ aside nav ul #logout {
   align-content: flex-start;
   justify-content: space-evenly;
 }
-
-.product {
+#marketplaceMain .product {
   display: flex;
   flex-direction: column;
   align-items: space-between;
@@ -267,53 +292,78 @@ aside nav ul #logout {
   border-radius: 5px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
-.product .productButton {
+#marketplaceMain .product .productButton {
   cursor: pointer;
   align-self: center;
 }
-.product img {
+#marketplaceMain .product img {
   max-height: 150px;
 }
-.product .productContent {
+#marketplaceMain .product .productContent {
   display: flex;
   justify-content: space-between;
   padding: 14px;
 }
-.product .productContent .price {
+#marketplaceMain .product .productContent .price {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.product .productContent .price span {
+#marketplaceMain .product .productContent .price span {
   line-height: 22px;
   font-weight: 600;
 }
-.product .productContent .price small {
+#marketplaceMain .product .productContent .price small {
   font-size: 12px;
 }
-.product .productContent form {
+#marketplaceMain .product .productContent form {
   display: flex;
   position: relative;
 }
-.product .productContent form .quantity {
+#marketplaceMain .product .productContent form .quantity {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.product .productContent form .quantity span {
+#marketplaceMain .product .productContent form .quantity span {
   font-size: 10px;
   color: #b3b3b3;
 }
-.product .productContent form .quantity select {
+#marketplaceMain .product .productContent form .quantity select {
   cursor: pointer;
   border-bottom: 1px solid #000;
 }
-.product .productContent form .buyButton {
+#marketplaceMain .product .productContent form .buyButton {
   cursor: pointer;
   background: none;
   width: 31px;
   height: 31px;
   margin-left: 4px;
+}
+#marketplaceMain .buyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  color: #000;
+  width: 280px;
+  height: 80px;
+  top: 140%;
+  left: -160%;
+  padding: 14px;
+  background-color: #FFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  z-index: 99;
+}
+#marketplaceMain .buyContainer::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 48%;
+  border-style: solid;
+  border-width: 0 7px 10px 7px;
+  border-color: transparent transparent #FFF transparent;
 }
 
 @media screen and (max-width: 768px) {
@@ -343,59 +393,6 @@ aside nav ul #logout {
     border-color: transparent transparent #FFF transparent;
   }
 }
-.buyContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  color: #000;
-  width: 280px;
-  height: 80px;
-  top: 140%;
-  left: -160%;
-  padding: 14px;
-  background-color: #FFF;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-  z-index: 99;
-}
-
-.buyContainer::before {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 48%;
-  border-style: solid;
-  border-width: 0 7px 10px 7px;
-  border-color: transparent transparent #FFF transparent;
-}
-
-.buttons {
-  display: flex;
-  align-self: flex-end;
-  margin: 16px 0px;
-  justify-content: center;
-}
-.buttons button {
-  cursor: pointer;
-  height: 22px;
-  width: 56px;
-  margin: 0px 6px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
-  border: 1px solid #ED1C25;
-}
-.buttons .no,
-.buttons .yes:active {
-  background-color: #FFF;
-  color: #ED1C25;
-}
-.buttons .yes,
-.buttons .no:active {
-  background-color: #ED1C25;
-  color: #FFF;
-}
-
 #overlay {
   display: flex;
   flex-direction: column;
@@ -419,7 +416,7 @@ aside nav ul #logout {
   align-items: space-between;
   height: 620px;
   width: 600px;
-  background: #FFF;
+  background-color: #FFF;
   border-radius: 20px;
   position: relative;
   background-image: url("/images/marketplace/ellipse.png");
@@ -479,7 +476,7 @@ aside nav ul #logout {
     align-items: space-between;
     height: 90%;
     width: 92%;
-    background: #FFF;
+    background-color: #FFF;
     border-radius: 20px;
     position: relative;
   }
@@ -643,7 +640,7 @@ aside nav ul #logout {
   align-items: space-between;
   height: 700px;
   width: 600px;
-  background: #FFF;
+  background-color: #FFF;
   border-radius: 20px;
   position: relative;
   overflow-y: auto;
@@ -824,7 +821,7 @@ aside nav ul #logout {
     align-items: space-between;
     height: 96%;
     width: 92%;
-    background: #FFF;
+    background-color: #FFF;
     border-radius: 20px;
     position: relative;
   }
