@@ -15,7 +15,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@azure/msal-browser": "^2.35.0",
-    "@azure/msal-react": "^1.5.5"
+    "@azure/msal-browser": "^2.35.0"
   }
 }
