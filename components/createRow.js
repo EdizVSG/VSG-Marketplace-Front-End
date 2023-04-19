@@ -1,12 +1,16 @@
-export const createRow = (id, title, category) => {
+import { closeContainerHandler } from "../src/global";
+import { deleteProduct } from "../src/itemsService";
+import { editProductModal } from "./editProductModal";
+
+export const createRow = (id, code, fullName, type, quantityForSale, quantity) => {
     const row = document.createElement("tr");
     row.id = id;
     row.innerHTML = `
-    <td>${id}</td>
-    <td>${title}</td>
-    <td>${category}</td>
-    <td>2</td>
-    <td class="randomNumberSelect"></td>
+    <td>${code}</td>
+    <td>${fullName}</td>
+    <td>${type}</td>
+    <td>${quantityForSale}</td>
+    <td>${quantity}</td>
     <td>
         <div class="editDelete">
             <a class="edit">
@@ -27,11 +31,38 @@ export const createRow = (id, title, category) => {
             </a>
         </div>
     </td>
-`
+    `;
 
-    const qty = row.querySelector(".randomNumberSelect");
-    const randomNumber = Math.floor(Math.random() * 11) + 1;
-    qty.textContent = randomNumber;
+    row.querySelector(".edit").addEventListener("click", (e) => {
+        e.preventDefault();
+        editProductModal(id);
+        const overlay = document.querySelector("#addItemOverlay2");
+        overlay.style.display = "flex";
+    })
+
+    row.querySelector(".delete").addEventListener("click", (e) => {
+        e.preventDefault();
+        const div = document.createElement("div");
+        div.className = "removeContainer";
+        div.innerHTML = `
+            <p>Are you sure you want to remove this item ?</p>
+            <div class="buttons">
+                <button class='yes'>Yes</button>
+                <button class='no'>No</button> 
+            </div>
+        `;
+
+        div.querySelector('.yes').addEventListener('click', async e => {
+            e.preventDefault();
+            const res = await deleteProduct(id);
+            console.log(res);
+            row.remove();
+        });
+
+        const el = e.target.parentElement;
+        el.appendChild(div);
+        closeContainerHandler(div);
+    });
 
     const tbody = document.querySelector('tbody');
     tbody.appendChild(row);
