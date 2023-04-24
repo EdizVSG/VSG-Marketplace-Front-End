@@ -45,7 +45,7 @@ export const myOrderComponent = (id, quantity, date, status, fullName, price) =>
 
             div.querySelector('.yes').addEventListener('click', async e => {
                 e.preventDefault();
-                cardDiv.querySelector('.orderStatus').textContent = "Declined";
+                cardDiv.querySelector('.orderStatus').textContent = ": Declined";
                 cancelOrderButton.remove();
             });
 
