@@ -257,17 +257,19 @@ aside nav ul #logout {
 .buttons {
   display: flex;
   align-self: flex-end;
-  margin: 16px 0px;
   justify-content: center;
+  margin-top: 16px;
 }
 .buttons button {
   cursor: pointer;
   height: 22px;
   width: 56px;
-  margin: 0px 6px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   border: 1px solid #ED1C25;
+}
+.buttons .yes {
+  margin-right: 10px;
 }
 .buttons .no,
 .buttons .yes:active {
@@ -285,6 +287,7 @@ aside nav ul #logout {
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
+  gap: 20px;
   align-content: flex-start;
   justify-content: space-evenly;
 }
@@ -293,7 +296,7 @@ aside nav ul #logout {
   flex-direction: column;
   align-items: space-between;
   margin: 20px 10px;
-  width: 280px;
+  width: 256px;
   height: 260px;
   border-radius: 5px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
@@ -301,7 +304,6 @@ aside nav ul #logout {
 #marketplaceMain .product .productButton {
   cursor: pointer;
   align-self: center;
-  margin: 10px;
   height: 320px;
 }
 #marketplaceMain .product img {
@@ -414,21 +416,18 @@ aside nav ul #logout {
   width: 100%;
   background: rgba(0, 0, 0, 0.5019607843);
 }
-#addItemOverlay img {
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-}
 #addItemOverlay #modalContent {
   display: flex;
   flex-direction: column;
   align-items: space-between;
   height: -moz-fit-content;
   height: fit-content;
-  width: 600px;
+  width: auto;
   background-color: #FFF;
   border-radius: 20px;
   position: relative;
   min-height: 620px;
+  max-width: 600px;
   background-image: url("/images/marketplace/ellipse.png");
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -439,7 +438,6 @@ aside nav ul #logout {
 }
 #addItemOverlay #modalContent #modalImage {
   align-self: center;
-  margin: 30px;
 }
 #addItemOverlay #modalContent #modalImage img {
   height: auto;

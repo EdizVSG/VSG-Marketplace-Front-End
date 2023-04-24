@@ -1,9 +1,10 @@
 import { closeModalHandler } from "../src/global.js";
 import { imageHandler } from "../src/global.js";
-import { createImage, createProduct } from "../src/itemsService.js";
+import { createProduct, loadCategories } from "../src/itemsService.js";
+import { createImage } from "../src/pictureService.js";
 import { createRow } from "./createRow.js";
 
-export const addProduct = () => {
+export const addProduct = async () => {
     const modal = document.createElement("form");
     modal.className = "addForm modalContent";
     modal.innerHTML = `
@@ -22,7 +23,6 @@ export const addProduct = () => {
             <textarea type="text" name="description" placeholder="Description"></textarea>
             <select name="categoryId" class="category">
                 <option value="" disabled selected>Category *</option>
-                <option value="1">Laptops</option>
             </select>
             <input type="number" name="quantityForSale" placeholder="Qty For Sale">
             <input type="number" name="price" placeholder="Sale Price">
@@ -42,51 +42,47 @@ export const addProduct = () => {
 
     const overlay = document.querySelector("#addItemOverlay");
     overlay.appendChild(modal);
-    closeModalHandler();
-    imageHandler(modal);
+
+    const select = modal.querySelector('.category');
+    const categories = await loadCategories();
+    categories.forEach(c => {
+        const option = document.createElement('option');
+        option.value = c.id;
+        option.textContent = c.type;
+        select.appendChild(option)
+    })
 
     modal.addEventListener("submit", async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const image = formData.get("picture");
         formData.delete("picture");
+
         const imageForm = new FormData();
         imageForm.append("picture", image);
+        const itemData = Object.fromEntries(formData);
 
-        let itemData = Object.fromEntries(formData);
-        console.log(itemData);
-        console.log(image);
-
-        // const user = JSON.parse(localStorage.getItem('user'));
-        // if (!user) {
-        //     alert("You are not logged in!");
-        //     return;
-        // }
-
-        if (!image.name) {
-            return alert("Choose an image!");
-        } else if (itemData.quantity < itemData.quantityForSale) {
+        if (itemData.quantity < itemData.quantityForSale && quantity < 1) {
             return alert("Make sure that quantity is not less than quantity for sale!");
         } else {
-            const res = await createProduct(itemData);
-            const id = await res.json();
-            itemData.id = id;
-            itemData.type = "Laptop";
-            console.log("POST", id);
-            const imgRes = await createImage(id, imageForm);
-            console.log("Image POST", imgRes);
+            const response = await createProduct(itemData);
+            console.log("POST", response);
+            if (image.name) {
+                const imgRes = await createImage(response.id, imageForm);
+                console.log("Image POST", imgRes);
+                itemData.image = URL.createObjectURL(image);
+            }
+
+            itemData.id = "21";
+            itemData.title = itemData.fullName;
+            itemData.category = "Laptop";
+            createRow(itemData);
         }
 
         modal.remove();
         overlay.style.display = "none";
-
-        createRow(
-            itemData.id,
-            itemData.code,
-            itemData.fullName,
-            itemData.type,
-            itemData.quantityForSale,
-            itemData.quantity
-        );
     });
+
+    closeModalHandler(modal);
+    imageHandler(modal);
 };

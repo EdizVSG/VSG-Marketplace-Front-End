@@ -15,11 +15,9 @@ const PendingOrders = async () => {
     </div>
     `;
 
-    let pendingProducts = await loadPendingOrders();
-    pendingProducts = await pendingProducts.json();
-    console.log(pendingProducts);
-    pendingProducts.forEach((p) => {
-        pendingOrderComponent(p.id, p.id, "10", p.price, "eredzhepov@email.com", "2022-12-12", "Pending");
+    const orders = await loadPendingOrders();
+    orders.forEach(p => {
+        pendingOrderComponent(p.id, p.id, 10, p.price, "name@mail.com", "2022.12.12 22:22");
     });
 };
 

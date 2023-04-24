@@ -2,15 +2,15 @@ import { closeContainerHandler } from "../src/global";
 import { deleteProduct } from "../src/itemsService";
 import { editProductModal } from "./editProductModal";
 
-export const createRow = (id, code, fullName, type, quantityForSale, quantity) => {
+export const createRow = (product) => {
     const row = document.createElement("tr");
-    row.id = id;
+    row.id = product.id;
     row.innerHTML = `
-    <td>${code}</td>
-    <td>${fullName}</td>
-    <td>${type}</td>
-    <td>${quantityForSale}</td>
-    <td>${quantity}</td>
+    <td>${product.id}</td>
+    <td>${product.title}</td>
+    <td>${product.category}</td>
+    <td>10</td>
+    <td>12</td>
     <td>
         <div class="editDelete">
             <a class="edit">
@@ -35,7 +35,7 @@ export const createRow = (id, code, fullName, type, quantityForSale, quantity) =
 
     row.querySelector(".edit").addEventListener("click", (e) => {
         e.preventDefault();
-        editProductModal(id);
+        editProductModal(product);
         const overlay = document.querySelector("#addItemOverlay2");
         overlay.style.display = "flex";
     })
@@ -54,14 +54,12 @@ export const createRow = (id, code, fullName, type, quantityForSale, quantity) =
 
         div.querySelector('.yes').addEventListener('click', async e => {
             e.preventDefault();
-            const res = await deleteProduct(id);
-            console.log(res);
+            console.log(row);
             row.remove();
         });
 
-        const el = e.target.parentElement;
-        el.appendChild(div);
         closeContainerHandler(div);
+        e.target.parentElement.appendChild(div);
     });
 
     const tbody = document.querySelector('tbody');

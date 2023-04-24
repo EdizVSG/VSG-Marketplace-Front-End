@@ -42,14 +42,11 @@ export const myOrderComponent = (id, quantity, date, status, fullName, price) =>
                     <button type="submit" class='yes'>Yes</button>
                     <button class='no'>No</button>
                     </div>
-                    `;
+            `;
 
             div.querySelector('.yes').addEventListener('click', async e => {
                 e.preventDefault();
-
-                const res = await rejectOrder(id);
-                console.log(res);
-                cardDiv.querySelector('.orderStatus').textContent = "Decline";
+                cardDiv.querySelector('.orderStatus').textContent = "Declined";
                 cancelOrderButton.remove();
             });
 

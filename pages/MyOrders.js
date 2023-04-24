@@ -15,11 +15,10 @@ const MyOrders = async () => {
     `;
 
     const user = sessionStorage.getItem("user")
-    const email = user ? user.username : "eredzhepov@vsgbg.com";
-    let myProducts = await loadMyOrders(email);
-    myProducts = await myProducts.json();
-    myProducts.forEach((p) => {
-        myOrderComponent(p.id, "10", "2022-12-12", "Pending", p.title, p.price);
+    const email = user ? user.username : "name@mail.com";
+    const orders = await loadMyOrders(email);
+    orders.forEach((p) => {
+        myOrderComponent(p.id, 10, "2022.12.12 22:22", "Pending", p.title, p.price);
     });
 };
 

@@ -41,10 +41,9 @@ const Inventory = async () => {
     </div>
     </div>
     `;
-    let products = await loadInventory();
-    products = await products.json();
-    products.forEach((p) => {
-        createRow(p.id, p.id, p.title, p.category, "10", "12");
+    const products = await loadInventory();
+    products.forEach(p => {
+        createRow(p);
     });
 
     main.querySelector("#searchText").addEventListener("input", (e) => {
@@ -52,28 +51,14 @@ const Inventory = async () => {
         main.querySelector("tbody").innerHTML = "";
         if (searchText) {
             const filteredProducts = products.filter((p) =>
-                p.fullName.toLowerCase().includes(searchText)
+                p.title.toLowerCase().includes(searchText)
             );
             filteredProducts.forEach((p) => {
-                createRow(
-                    p.id,
-                    p.code,
-                    p.fullName,
-                    p.type,
-                    p.quantityForSale,
-                    p.quantity
-                );
+                createRow(p);
             });
         } else {
             products.forEach((p) => {
-                createRow(
-                    p.id,
-                    p.code,
-                    p.fullName,
-                    p.type,
-                    p.quantityForSale,
-                    p.quantity
-                );
+                createRow(p);
             });
         }
     });
