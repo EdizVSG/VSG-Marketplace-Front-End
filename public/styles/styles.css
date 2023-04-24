@@ -1129,6 +1129,7 @@ aside nav ul #logout {
   #root #myOrdersMain .pendingOrders .orderDateColumn::before,
   #root #myOrdersMain .pendingOrders .orderStatus::before {
     font-weight: 700;
+    margin-right: 4px;
   }
   #root #pendingOrdersMain .pendingOrders .codeColumn::before,
   #root #pendingOrdersMain .pendingOrders .qtyColumn::before,
@@ -1140,7 +1141,7 @@ aside nav ul #logout {
   }
   #root #pendingOrdersMain .pendingOrders .nameColumn::before,
   #root #myOrdersMain .pendingOrders .nameColumn::before {
-    content: "Name";
+    content: "Name:";
   }
   #root #pendingOrdersMain .pendingOrders .codeColumn::before,
   #root #myOrdersMain .pendingOrders .codeColumn::before {
@@ -1156,15 +1157,15 @@ aside nav ul #logout {
   }
   #root #pendingOrdersMain .pendingOrders .orderedByColumn::before,
   #root #myOrdersMain .pendingOrders .orderedByColumn::before {
-    content: "Ordered by";
+    content: "Ordered by:";
   }
   #root #pendingOrdersMain .pendingOrders .orderDateColumn::before,
   #root #myOrdersMain .pendingOrders .orderDateColumn::before {
-    content: "Order date";
+    content: "Order date:";
   }
   #root #pendingOrdersMain .pendingOrders .orderStatus::before,
   #root #myOrdersMain .pendingOrders .orderStatus::before {
-    content: "Status";
+    content: "Status:";
   }
   #root #pendingOrdersMain .pendingOrders .completeButton,
   #root #myOrdersMain .pendingOrders .completeButton {

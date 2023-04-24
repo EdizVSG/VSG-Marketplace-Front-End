@@ -5,14 +5,14 @@ export const myOrderComponent = (id, quantity, date, status, fullName, price) =>
     cardDiv.className = "pendingOrders";
     cardDiv.id = id;
     cardDiv.innerHTML = `
-    <span class="nameColumn">: ${fullName}</span>
+    <span class="nameColumn">${fullName}</span>
     <div class="firstTwo">
         <span class="qtyColumn">${quantity}</span>
         <span class="priceColumn">${price} BGN</span>
         </div>
-        <span class="orderDateColumn">: ${date}</span>
+        <span class="orderDateColumn">${date}</span>
         <div class="orderStatus">
-            <span>: ${status}</span>
+            <span>${status}</span>
             <div id="popupParent">
             </div>
         </div>
