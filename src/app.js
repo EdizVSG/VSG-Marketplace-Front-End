@@ -1,5 +1,4 @@
-import './router.js';
-import './global.js';
-import './navbar.js';
-import { handleSPALinks } from './router.js';
+import { handleSPALinks } from './router.ts';
+import './router.ts';
+import './global.ts';
 handleSPALinks();

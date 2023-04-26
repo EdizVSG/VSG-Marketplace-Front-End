@@ -1,0 +1,111 @@
+//Sidebar with navigation
+
+aside,
+main {
+    height: calc(100vh - 160px);
+    background-color: $general-white;
+    border-radius: 20px;
+    margin: 30px 20px;
+    overflow-y: auto;
+}
+
+aside {
+    @include flex-align(column, flex-start);
+    padding: 20px 8px;
+    justify-content: space-evenly;
+    width: 24%;
+    min-width: 160px;
+
+    .profileGreet2 {
+        display: none;
+        margin: 0px 14px;
+        margin-top: 20px;
+
+        span {
+            margin-left: 10px;
+        }
+    }
+
+    nav {
+        height: inherit;
+        width: 100%;
+
+        ul {
+            @include flex-align(column, flex-start);
+            list-style: none;
+            height: 94%;
+            margin-top: 7%;
+
+            li {
+                width: 100%;
+            }
+
+            .navButton {
+                @include flex-align(row, center);
+                justify-content: flex-start;
+                margin: 6px 14px;
+                font-weight: 400;
+                background: $general-white;
+                color: $general-black;
+                height: 46px;
+                width: 90%;
+                border-radius: 10px;
+            }
+
+            .navButton:hover {
+                cursor: pointer;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .navButton:active {
+                cursor: pointer;
+                color: $general-white;
+                background: $main-color;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .navButton:active .icon>path {
+                fill: $general-white;
+            }
+
+            .icon {
+                margin: 0px 14px;
+            }
+
+            .active {
+                cursor: pointer;
+                color: $general-white;
+                background: $main-color;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+                fill: $general-white;
+            }
+
+            #logout {
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    aside,
+    main {
+        height: 100%;
+        width: 92%;
+        margin: 16px 0px;
+        padding: 0;
+    }
+
+    aside {
+        display: none;
+
+        .profileGreet2 {
+            @include flex-align(row, center);
+        }
+
+        nav ul {
+            margin-top: 20px;
+        }
+    }
+}

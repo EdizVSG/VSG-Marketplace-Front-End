@@ -24,7 +24,7 @@ export const makeRequest = async ({
         });
 
         if (!res.ok) {
-            return Promise.reject();
+            throw new Error('Something went wrong!');
         }
 
         return res;

@@ -1,6 +1,6 @@
 export const createImage = async (id, file) => {
     try {
-        return (id, file);
+        return file;
     } catch (err) {
         console.error(err);
     }
@@ -8,7 +8,7 @@ export const createImage = async (id, file) => {
 
 export const editImage = async (id, file) => {
     try {
-        return (id, file);
+        return file;
     } catch (err) {
         console.error(err);
     }

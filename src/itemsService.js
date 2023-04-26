@@ -26,57 +26,63 @@ export const loadProduct = async (id) => {
 };
 
 export const createProduct = async (data) => {
-    const res = await makeRequest({
-        path: "",
-        method: "POST",
-        data,
-    });
-    return await res.json();
+    // const res = await makeRequest({
+    //     path: "",
+    //     method: "POST",
+    //     data,
+    // });
+    return data;
 };
 
 export const editProduct = async (id, data) => {
-    const res = await makeRequest({
-        path: id,
-        method: "PUT",
-        data,
-    });
-    return res.json();
+    // const res = await makeRequest({
+    //     path: id,
+    //     method: "PUT",
+    //     data,
+    // });
+    return id, data;
 };
 
 export const deleteProduct = async (id) => {
-    const res = await makeRequest({
-        path: id,
-        method: "DELETE",
-    });
-    return res;
+    // const res = await makeRequest({
+    //     path: id,
+    //     method: "DELETE",
+    // });
+    return id;
 };
 
 export const createOrder = async (data) => {
-    const res = await makeRequest({
-        path: "",
-        method: "POST",
-        data,
-    });
-    return res;
+    // const res = await makeRequest({
+    //     path: "",
+    //     method: "POST",
+    //     data,
+    // });
+    return data;
 };
 
 export const completeOrder = async (id) => {
-    const res = await makeRequest({
-        path: id,
-        method: "PUT",
-    });
-    return res;
+    // const res = await makeRequest({
+    //     path: id,
+    //     method: "PUT",
+    // });
+    return id;
 };
 
 export const rejectOrder = async (id) => {
-    const res = await makeRequest({
-        path: id,
-        method: "PUT",
-    });
-    return res;
+    // const res = await makeRequest({
+    //     path: id,
+    //     method: "PUT",
+    // });
+    return id;
 };
 
 export const loadCategories = async () => {
-    const category = [{ categoryId: 1, type: "Laptop" }, { categoryId: 2, type: "PC" }]
+    const category = [
+        { categoryId: 1, type: "Laptop" },
+        { categoryId: 2, type: "PC" },
+        { categoryId: 3, type: "Mouse" },
+        { categoryId: 4, type: "Keyboard" },
+        { categoryId: 5, type: "Monitor" },
+    ];
     return category;
 };
