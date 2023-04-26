@@ -9,6 +9,7 @@ export interface IProduct {
     categoryId: number;
     category: string;
     image?: string;
+    fullName?: string;
 }
 
 export interface IOrder {

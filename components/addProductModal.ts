@@ -20,9 +20,9 @@ export const addProduct = async (): Promise<void> => {
         <div class="leftModal">
             <h2>Add New Item</h2>
             <input type="text" name="code" placeholder="Code *" required>
-            <input type="text" name="fullName" placeholder="Name *" required>
+            <input type="text" name="title" placeholder="Name *" required>
             <textarea type="text" name="description" placeholder="Description"></textarea>
-            <select name="categoryId" class="category">
+            <select name="category" class="category">
                 <option value="" disabled selected>Category *</option>
             </select>
             <input type="number" name="quantityForSale" placeholder="Qty For Sale">
@@ -31,7 +31,7 @@ export const addProduct = async (): Promise<void> => {
         </div>
         <div class="rightModal">
             <img class="currentImg" src="/images/inventory/no-image-placeholder.png">
-            <input id="uploadInput" class="inputImage" accept="image/*" name="picture" type="file">
+            <input id="uploadInput" class="inputImage" accept="image/*" name="image" type="file">
             <div class="uploadDelete">
                 <label for="uploadInput" class="uploadImg">Upload</label>
                 <button class="deleteImg">Remove</button>
@@ -56,11 +56,11 @@ export const addProduct = async (): Promise<void> => {
     modal.addEventListener("submit", async (e: SubmitEvent) => {
         e.preventDefault();
         const formData = new FormData(e.target as HTMLFormElement);
-        const image = formData.get("picture") as File;
-        formData.delete("picture");
+        const image = formData.get("image") as File;
+        formData.delete("image");
 
         const imageForm = new FormData();
-        imageForm.append("picture", image);
+        imageForm.append("image", image);
         const itemData = Object.fromEntries(formData) as unknown as IProduct;
 
         if (itemData.quantityForSale) {
@@ -75,10 +75,11 @@ export const addProduct = async (): Promise<void> => {
             console.log(image);
             const imgRes = await createImage(response.id, imageForm) as string;
             console.log("Image POST", imgRes);
-            response.imageUrl = imgRes;
+            itemData.image = URL.createObjectURL(image) as string;;
         }
 
-        rowComponent(response);
+        itemData.id = 21;
+        rowComponent(itemData);
 
         modal.remove();
         overlay.style.display = "none";
