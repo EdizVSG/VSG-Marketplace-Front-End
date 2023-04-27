@@ -2,7 +2,7 @@ import { closeModalHandler } from "../src/global.ts";
 import { imageHandler } from "../src/global.ts";
 import { createProduct, loadCategories } from "../src/itemsService.js";
 import { createImage } from "../src/pictureService.js";
-import { ICategory, IProduct } from "../src/types.ts";
+import { IProduct } from "../src/types.ts";
 import { rowComponent } from "./rowComponent.ts";
 
 export const addProduct = async (): Promise<void> => {
@@ -22,7 +22,7 @@ export const addProduct = async (): Promise<void> => {
             <input type="text" name="code" placeholder="Code *" required>
             <input type="text" name="title" placeholder="Name *" required>
             <textarea type="text" name="description" placeholder="Description"></textarea>
-            <select name="category" class="category">
+            <select name="categoryId" class="category">
                 <option value="" disabled selected>Category *</option>
             </select>
             <input type="number" name="quantityForSale" placeholder="Qty For Sale">
@@ -31,7 +31,7 @@ export const addProduct = async (): Promise<void> => {
         </div>
         <div class="rightModal">
             <img class="currentImg" src="/images/inventory/no-image-placeholder.png">
-            <input id="uploadInput" class="inputImage" accept="image/*" name="image" type="file">
+            <input id="uploadInput" class="inputImage" accept="image/*" name="picture" type="file">
             <div class="uploadDelete">
                 <label for="uploadInput" class="uploadImg">Upload</label>
                 <button class="deleteImg">Remove</button>
@@ -46,7 +46,7 @@ export const addProduct = async (): Promise<void> => {
 
     const select = modal.querySelector('.category') as HTMLSelectElement;
     const categories = await loadCategories();
-    categories.forEach((c) => {
+    categories.forEach(c => {
         const option = document.createElement('option') as HTMLOptionElement;
         option.value = `${c.categoryId}`;
         option.textContent = c.type;
@@ -56,11 +56,11 @@ export const addProduct = async (): Promise<void> => {
     modal.addEventListener("submit", async (e: SubmitEvent) => {
         e.preventDefault();
         const formData = new FormData(e.target as HTMLFormElement);
-        const image = formData.get("image") as File;
-        formData.delete("image");
+        const image = formData.get("picture") as File;
+        formData.delete("picture");
 
         const imageForm = new FormData();
-        imageForm.append("image", image);
+        imageForm.append("picture", image);
         const itemData = Object.fromEntries(formData) as unknown as IProduct;
 
         if (itemData.quantityForSale) {
@@ -75,11 +75,11 @@ export const addProduct = async (): Promise<void> => {
             console.log(image);
             const imgRes = await createImage(response.id, imageForm) as string;
             console.log("Image POST", imgRes);
-            itemData.image = URL.createObjectURL(image) as string;;
+            response.image = URL.createObjectURL(image);
         }
-
-        itemData.id = 21;
-        rowComponent(itemData);
+        response.id = 21;
+        response.category = 'Laptop';
+        rowComponent(response);
 
         modal.remove();
         overlay.style.display = "none";
@@ -87,4 +87,7 @@ export const addProduct = async (): Promise<void> => {
 
     closeModalHandler(modal);
     imageHandler(modal);
+    setTimeout(() => {
+        modal.style.opacity = "1";
+    }, 10);
 };

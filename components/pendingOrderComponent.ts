@@ -1,11 +1,10 @@
-import { completeOrder } from "../src/itemsService.js";
+import { completeOrder } from "../src/itemsService";
 import { IOrder } from "../src/types";
 
 export const pendingOrderComponent = (product: IOrder) => {
     product.quantity = 1;
-    product.email = "name@mail.com";
+    product.email = 'name@mail.com';
     product.date = "2022-12-12 12:12";
-
     const cardDiv = document.createElement("div");
     cardDiv.className = "pendingOrders";
     cardDiv.id = `${product.id}`;
@@ -34,4 +33,8 @@ export const pendingOrderComponent = (product: IOrder) => {
     );
 
     (document.querySelector("#pendingOrdersMain") as HTMLElement).appendChild(cardDiv);
+    setTimeout(() => {
+        cardDiv.style.opacity = "1";
+        (document.querySelector("#headingSection") as HTMLElement).style.opacity = '1'
+    }, 300);
 };

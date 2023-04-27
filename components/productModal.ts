@@ -1,6 +1,7 @@
 import { IProduct } from "../src/types";
 
 export const productModal = (product: IProduct): HTMLElement => {
+    product.quantityForSale = 10;
     const modalContent = document.createElement("div") as HTMLElement;
     modalContent.id = "productModal";
     modalContent.className = "modalContent";
@@ -34,5 +35,9 @@ export const productModal = (product: IProduct): HTMLElement => {
     `;
 
     (document.querySelector("#addItemOverlay") as HTMLElement).appendChild(modalContent);
+    setTimeout(() => {
+        (document.querySelector("#addItemOverlay") as HTMLElement)
+        modalContent.style.opacity = "1";
+    }, 10);
     return modalContent;
 };

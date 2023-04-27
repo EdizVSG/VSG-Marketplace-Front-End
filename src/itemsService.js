@@ -15,7 +15,7 @@ export const loadPendingOrders = async () => {
     return await res.json();
 };
 
-export const loadMyOrders = async () => {
+export const loadMyOrders = async (email) => {
     const res = await makeRequest({});
     return await res.json();
 };

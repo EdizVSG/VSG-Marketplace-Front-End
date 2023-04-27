@@ -1,14 +1,15 @@
 import { editProduct, loadCategories } from "../src/itemsService.js";
-import { deleteImage, editImage } from "../src/pictureService.js";
 import { closeModalHandler, imagePlaceholder } from "../src/global.ts";
 import { imageHandler } from "../src/global.ts";
-import { ICategory, IProduct } from "../src/types.ts";
+import { deleteImage, editImage } from "../src/pictureService.js";
+import { IProduct } from "../src/types.ts";
 
 export const editProductModal = async (product: IProduct): Promise<void> => {
     if (!product.image) {
         product.image = imagePlaceholder;
     }
-
+    product.quantity = 12;
+    product.quantityForSale = 10;
     const modal = document.createElement("form");
     modal.className = "editForm modalContent";
     modal.innerHTML = `
@@ -92,6 +93,11 @@ export const editProductModal = async (product: IProduct): Promise<void> => {
         console.log("PUT", res);
 
         modal.remove();
+
         overlay.style.display = "none";
     });
+
+    setTimeout(() => {
+        modal.style.opacity = "1";
+    }, 10);
 };

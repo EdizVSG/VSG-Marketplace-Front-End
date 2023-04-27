@@ -4,9 +4,8 @@ import { IOrder } from "../src/types.ts";
 
 export const myOrderComponent = (product: IOrder) => {
     product.quantity = 1;
+    product.status = 'Pending';
     product.date = "2022-12-12 12:12";
-    product.status = "Pending";
-
     const cardDiv = document.createElement("div") as HTMLElement;
     cardDiv.className = "pendingOrders";
     cardDiv.id = `${product.id}`;
@@ -58,10 +57,16 @@ export const myOrderComponent = (product: IOrder) => {
 
             closeContainerHandler(div);
             popupParent.appendChild(div);
+            setTimeout(() => {
+                div.style.opacity = '1';
+            }, 10)
         });
 
         popupParent.appendChild(cancelOrderButton);
     }
 
     (document.querySelector("#myOrdersMain") as HTMLElement).appendChild(cardDiv);
+    setTimeout(() => {
+        cardDiv.style.opacity = "1";
+    }, 300);
 };
