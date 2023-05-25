@@ -1,5 +1,5 @@
 import { useRejectOrderMutation } from "../services/ordersService.ts";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { IOrder } from "../types/types.ts";
 import { toast } from "react-toastify";
 import { Fade } from '@mui/material';
