@@ -1,4 +1,3 @@
-// import { Home, Marketplace, Inventory, PendingOrders, MyOrders, NotFound } from './pages';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy } from "react";
 import Layout from "./components/Layout";
@@ -19,11 +18,11 @@ const Navigation = () => {
                 <Route index element={<Home />} />
                 <Route path="*" element={<NotFound />} />
                 <Route element={<UserRoute />}>
-                    <Route path="marketplace" element={<Layout><Marketplace /></Layout>} />
-                    <Route path="my-orders" element={<Layout><MyOrders /></Layout>} />
-                    <Route element={<Layout><AdminRoute /></Layout>} >
-                        <Route path="inventory" element={<Layout><Inventory /></Layout>} />
-                        <Route path="pending-orders" element={<Layout><PendingOrders /></Layout>} />
+                    <Route path="marketplace" element={<Layout ><Marketplace /></Layout>} />
+                    <Route path="my-orders" element={<Layout ><MyOrders /></Layout>} />
+                    <Route element={<Layout ><AdminRoute /></Layout>} >
+                        <Route path="inventory" element={<Inventory />} />
+                        <Route path="pending-orders" element={<PendingOrders />} />
                     </Route >
                 </Route>
             </Routes>
