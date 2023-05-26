@@ -74,7 +74,6 @@ const EditProductModal = ({ setProducts, product, showEditModal, setShowEditModa
             setProducts(oldProducts => oldProducts.map(p => p.id === editedProduct.id ? editedProduct : p));
         } else if (currentImg.src !== product.imageUrl && product.imageUrl !== null) {
             await deleteImage(id);
-            setImageUrl(imagePlaceholder);
         }
 
         const response = await editProduct({ id, data }) as { data: IProduct };

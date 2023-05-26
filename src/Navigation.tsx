@@ -21,7 +21,7 @@ const Navigation = () => {
                 <Route element={<UserRoute />}>
                     <Route path="marketplace" element={<Layout><Marketplace /></Layout>} />
                     <Route path="my-orders" element={<Layout><MyOrders /></Layout>} />
-                    <Route element={<AdminRoute />} >
+                    <Route element={<Layout><AdminRoute /></Layout>} >
                         <Route path="inventory" element={<Layout><Inventory /></Layout>} />
                         <Route path="pending-orders" element={<Layout><PendingOrders /></Layout>} />
                     </Route >

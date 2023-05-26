@@ -4,7 +4,7 @@ import { ILocation, IProduct } from "../../types/types.ts";
 import { useState, useEffect } from "react";
 import AddProductModal from "../../components/AddProductModal.tsx";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import InventoryTable from "../../components/Table.tsx";
+import InventoryTable from "../../components/InventoryTable.tsx";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
 import {
@@ -76,8 +76,9 @@ const Inventory = () => {
                 </div>
                 {products &&
                     <InventoryTable
-                    setProducts={setProducts}
-                    filteredProducts={filteredProducts}
+                    isLoading={isLoading}
+                        setProducts={setProducts}
+                        filteredProducts={filteredProducts}
                     />
                 }
             </main>
