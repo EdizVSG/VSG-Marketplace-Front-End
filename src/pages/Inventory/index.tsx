@@ -2,9 +2,9 @@ import { useGetInventoryQuery } from "../../services/productsService";
 import { useGetLocationQuery } from "../../services/locationsService.ts";
 import { ILocation, IProduct } from "../../types/types.ts";
 import { useState, useEffect } from "react";
-import AddProductModal from "../../components/AddProductModal.tsx";
+import AddProductModal from "./AddProductModal.tsx";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import InventoryTable from "../../components/InventoryTable.tsx";
+import InventoryTable from "./InventoryTable.tsx";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
 import {
@@ -76,7 +76,7 @@ const Inventory = () => {
                 </div>
                 {products &&
                     <InventoryTable
-                    isLoading={isLoading}
+                        isLoading={isLoading}
                         setProducts={setProducts}
                         filteredProducts={filteredProducts}
                     />

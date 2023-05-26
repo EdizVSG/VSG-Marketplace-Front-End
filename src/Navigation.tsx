@@ -1,3 +1,4 @@
+// import { Home, Marketplace, Inventory, PendingOrders, MyOrders, NotFound } from './pages';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy } from "react";
 import Layout from "./components/Layout";

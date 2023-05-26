@@ -1,12 +1,12 @@
-import { useCreateOrderMutation } from "../services/ordersService.ts";
-import { imagePlaceholder } from "../utils/imagePlaceholder.ts";
+import { useCreateOrderMutation } from "../../services/ordersService.ts";
+import { imagePlaceholder } from "../../utils/imagePlaceholder.ts";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { IProduct, IUser } from "../types/types.ts";
+import { IProduct, IUser } from "../../types/types.ts";
 import { Fade } from '@mui/material';
 import { toast } from "react-toastify";
 import ProductModal from "./ProductModal.tsx";
-import Popup from "./Popup.tsx";
+import Popup from "../../components/Popup.tsx";
 
 type CardComponentProps = {
     product: IProduct;
