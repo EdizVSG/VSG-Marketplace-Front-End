@@ -21,7 +21,7 @@ const Home = (): JSX.Element => {
 
       //Check if user is in admin group
       const adminGroupString = 'f2123818-3d51-4fe4-990b-b072a80da143';
-      if (payload.groups.includes(adminGroupString)) {
+      if (payload.groups?.includes(adminGroupString)) {
         memberType = 'Admin';
       }
 
