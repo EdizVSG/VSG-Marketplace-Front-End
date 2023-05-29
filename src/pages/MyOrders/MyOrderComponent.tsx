@@ -1,10 +1,10 @@
-import { useRejectOrderMutation } from "../../services/ordersService.ts";
-import { useState } from "react";
-import { IOrder } from "../../types/types.ts";
-import { toast } from "react-toastify";
+import { useRejectOrderMutation } from '../../services/ordersService.ts';
+import { useState } from 'react';
+import { IOrder } from '../../types/types.ts';
+import { toast } from 'react-toastify';
 import { Fade } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import Popup from "../../components/Popup.tsx";
+import Popup from '../../components/Popup.tsx';
 
 type MyOrderProps = {
     order: IOrder;
@@ -25,7 +25,7 @@ const MyOrderComponent = ({ order }: MyOrderProps) => {
         }
 
         setTimeout(() => {
-            setCurrentStatus("Declined");
+            setCurrentStatus('Declined');
         }, 600);
 
         toast.info('Order declined.');
@@ -35,17 +35,17 @@ const MyOrderComponent = ({ order }: MyOrderProps) => {
         <>
             <Popup popupMessage={popupMessage} onYes={onCancel} anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
             <Fade in={true} timeout={1000}>
-                <div id={order.id.toString()} className="order" >
-                    <span className="nameColumn">{order.productFullName}</span>
-                    <div className="firstTwo">
-                        <span className="qtyColumn">{order.quantity}</span>
-                        <span className="priceColumn">{order.price} BGN</span>
+                <div id={order.id.toString()} className='order' >
+                    <span className='nameColumn'>{order.productFullName}</span>
+                    <div className='firstTwo'>
+                        <span className='qtyColumn'>{order.quantity}</span>
+                        <span className='priceColumn'>{order.price} BGN</span>
                     </div>
-                    <span className="orderDateColumn">{order.date}</span>
-                    <div className="orderStatus">
+                    <span className='orderDateColumn'>{order.date}</span>
+                    <div className='orderStatus'>
                         <span>{currentStatus}</span>
-                        {currentStatus === "Pending" &&
-                            <a className="cancelOrder" onClick={e => setAnchorEl(e.currentTarget)}>
+                        {currentStatus === 'Pending' &&
+                            <a className='cancelOrder' onClick={e => setAnchorEl(e.currentTarget)}>
                                 <CloseIcon />
                             </a>}
                     </div>

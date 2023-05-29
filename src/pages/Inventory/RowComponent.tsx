@@ -1,10 +1,10 @@
 import { TableCell, TableRow, tableCellClasses, styled, Fade } from '@mui/material';
 import { useState, useRef, Dispatch, SetStateAction } from 'react';
 import { useDeleteProductMutation } from '../../services/productsService.ts';
-import { IProduct } from "../../types/types.ts";
+import { IProduct } from '../../types/types.ts';
 import { toast } from 'react-toastify';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import EditProductModal from "./EditProductModal.tsx";
+import EditProductModal from './EditProductModal.tsx';
 import EditIcon from '@mui/icons-material/Edit';
 import Popup from '../../components/Popup.tsx';
 
@@ -63,10 +63,10 @@ const RowComponent = ({ product, setProducts }: RowComponentProps) => {
                     <StyledTableCell>{product.quantityForSale}</StyledTableCell>
                     <StyledTableCell>{product.quantity}</StyledTableCell>
                     <StyledTableCell>
-                        <a className="edit" onClick={() => setShowEditModal(true)}>
+                        <a className='edit' onClick={() => setShowEditModal(true)}>
                             <EditIcon />
                         </a>
-                        <a className="delete" onClick={e => setAnchorEl(e.currentTarget)}>
+                        <a className='delete' onClick={e => setAnchorEl(e.currentTarget)}>
                             <DeleteOutlineIcon />
                         </a>
                     </StyledTableCell>
