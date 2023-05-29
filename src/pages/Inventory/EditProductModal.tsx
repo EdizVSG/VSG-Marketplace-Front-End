@@ -1,3 +1,14 @@
+import { useDeleteImageMutation, useEditImageMutation } from "../../services/imageService.ts";
+import { useState, Dispatch, SetStateAction, } from "react";
+import { IFormInputs, ICategory, IProduct, ILocation } from "../../types/types.ts";
+import { useEditProductMutation } from "../../services/productsService.ts";
+import { useGetCategoriesQuery } from "../../services/categoriesService.ts";
+import { useGetLocationQuery } from "../../services/locationsService.ts";
+import { imagePlaceholder } from "../../utils/imagePlaceholder.ts";
+import { uploadImage } from "../../utils/uploadImage.ts";
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import Modal from "../../components/Modal.tsx";
 import {
     TextField,
     FormControl,
@@ -6,17 +17,6 @@ import {
     MenuItem,
     FormHelperText,
 } from "@mui/material";
-import { useDeleteImageMutation, useEditImageMutation } from "../../services/imageService.ts";
-import { useState, Dispatch, SetStateAction, } from "react";
-import { IFormInputs, ICategory, IProduct, ILocation } from "../../types/types.ts";
-import { useEditProductMutation } from "../../services/productsService.ts";
-import { useGetCategoriesQuery } from "../../services/categoriesService.ts";
-import { imagePlaceholder } from "../../utils/imagePlaceholder.ts";
-import { uploadImage } from "../../utils/uploadImage.ts";
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import Modal from "../../components/Modal.tsx";
-import { useGetLocationQuery } from "../../services/locationsService.ts";
 
 type EditModalProps = {
     setProducts: Dispatch<SetStateAction<IProduct[]>>;

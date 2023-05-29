@@ -49,14 +49,14 @@ const RowComponent = ({ product, setProducts }: RowComponentProps) => {
         setProducts(oldProducts => oldProducts.filter(p => p !== product));
     }
 
-    const str = `Are you sure you want to remove this item ?`;
+    const popupMessage = `Are you sure you want to remove this item ?`;
 
     return (
         <>
             <EditProductModal setProducts={setProducts} product={product} showEditModal={showEditModal} setShowEditModal={setShowEditModal} />
-            <Popup string={str} onYes={handleDelete} anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+            <Popup popupMessage={popupMessage} onYes={handleDelete} anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
             <Fade in={true} timeout={500}>
-                <StyledTableRow ref={rowRef} id={product.id.toString()} className="productRow">
+                <StyledTableRow ref={rowRef} id={product.id.toString()}>
                     <StyledTableCell>{product.code}</StyledTableCell>
                     <StyledTableCell>{product.fullName}</StyledTableCell>
                     <StyledTableCell>{product.type}</StyledTableCell>

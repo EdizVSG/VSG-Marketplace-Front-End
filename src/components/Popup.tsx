@@ -13,13 +13,13 @@ const StyledPopper = styled(Popper)(() => ({
 }));
 
 type PopupProps = {
-    string: string,
+    popupMessage: string,
     onYes: () => void,
     anchorEl: HTMLElement | null,
     setAnchorEl: Dispatch<SetStateAction<HTMLElement | null>>
 }
 
-const Popup = ({ string, onYes, anchorEl, setAnchorEl }: PopupProps) => {
+const Popup = ({ popupMessage, onYes, anchorEl, setAnchorEl }: PopupProps) => {
 
     return (
         <StyledPopper
@@ -63,7 +63,7 @@ const Popup = ({ string, onYes, anchorEl, setAnchorEl }: PopupProps) => {
                         <div className="popup">
                             <Box component="span" className="arrow" />
                             <p>
-                                {string}
+                                {popupMessage}
                             </p>
                             <div className="buttons">
                                 <button className="yes" onClick={onYes}>

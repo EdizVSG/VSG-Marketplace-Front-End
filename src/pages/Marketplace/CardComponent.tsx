@@ -56,13 +56,13 @@ const CardComponent = ({ product }: CardComponentProps) => {
         navigate("/my-orders");
     };
 
-    const str = `Are you sure you want to buy ${selectValue.current} item for
+    const popupMessage = `Are you sure you want to buy ${selectValue.current} item for
     ${product.price * selectValue.current} BGN ?`;
 
     return (
         <>
             <ProductModal product={product} showProductModal={showProductModal} setShowProductModal={setShowProductModal} />
-            <Popup string={str} onYes={onBuy} anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+            <Popup popupMessage={popupMessage} onYes={onBuy} anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
             <Fade in={true} timeout={1000}>
                 <div id={product.id.toString()} className="product">
                     <a className="productButton" onClick={() => setShowProductModal(true)}>
