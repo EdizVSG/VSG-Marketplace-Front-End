@@ -19,7 +19,7 @@ exports[`Popup should render Popup component 1`] = `
     />
     <p>
       Are you sure you want to buy 1 item for
-    10 BGN ?
+    NaN BGN ?
     </p>
     <div
       class="buttons"
