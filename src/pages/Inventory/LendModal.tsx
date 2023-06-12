@@ -3,6 +3,7 @@ import { useCreateLendMutation } from '../../services/lendService.ts';
 import { ILendInputs, IProduct } from '../../types/types.ts';
 import { useForm, Controller } from 'react-hook-form';
 import { imagePlaceholder } from '../../utils/imagePlaceholder.ts';
+import { useGetUsersQuery } from '../../services/usersService.ts';
 import { toast } from 'react-toastify';
 import Modal from '../../components/Modal.tsx';
 import {
@@ -29,6 +30,9 @@ const LendModal = ({
     setShowLendModal,
 }: LendModalProps) => {
     const [createLend] = useCreateLendMutation();
+    const { data: users } = useGetUsersQuery();
+    console.log(users);
+
     const {
         register,
         handleSubmit,
