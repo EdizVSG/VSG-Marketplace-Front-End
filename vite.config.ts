@@ -15,7 +15,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/Users': {
+      'api/get_all_employees_data_from_bob': {
         target: 'https://sm-server.netlify.app/api/get_all_employees_data_from_bob',
         changeOrigin: true
       },

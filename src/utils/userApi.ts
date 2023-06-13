@@ -1,19 +1,25 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IUser } from '../types/types';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { IEmployee, IEmployeesResponse } from "types/types";
 
-const baseURL = 'https://sm-server.netlify.app/';
+const baseUrl = 'https://sm-server.netlify.app/.netlify/functions/get_all_employees_data_from_bob';
 
 export const userApi = createApi({
-  reducerPath: 'baseApi',
+  reducerPath: "userAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: baseURL,
-    prepareHeaders: (headers) => {
-      const user: IUser = JSON.parse(sessionStorage.getItem('user') as string);
-      headers.set('Authorization', `Bearer ${user?.token}`);
-      return headers;
-    },
+    baseUrl: baseUrl,
   }),
-  endpoints: () => ({}),
-  keepUnusedDataFor: 0,
-  refetchOnMountOrArgChange: true,
+  endpoints: (builder) => ({
+    getUsers: builder.query<IEmployee[], void>({
+      query: () => ({
+        url: "",
+        headers: {
+          "x-token": "vanessa&radostina",
+        },
+      }),
+      transformResponse: (response: IEmployeesResponse) => response.employees
+    }),
+  }),
+  keepUnusedDataFor: 86400,
 });
+
+export const { useGetUsersQuery } = userApi;
